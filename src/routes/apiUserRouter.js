@@ -3,7 +3,6 @@ import bcrypt from 'bcrypt';
 import { User } from '../../db/models';
 
 const router = express.Router();
-
 router.post('/signup', async (req, res) => {
   try {
     const { pass, email, username } = req.body;
@@ -25,7 +24,6 @@ router.post('/signup', async (req, res) => {
     res.sendStatus(500);
   }
 });
-
 router.post('/login', async (req, res) => {
   try {
     const { pass, email } = req.body;
@@ -46,11 +44,9 @@ router.post('/login', async (req, res) => {
     res.sendStatus(500);
   }
 });
-
 router.get('/logout', async (req, res) => {
   req.session.destroy();
   res.clearCookie('user_sid');
   res.redirect('/');
 });
-
 export default router;

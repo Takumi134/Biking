@@ -32,6 +32,9 @@ export default function LoginPage() {
 
         <button type="submit" className="btn btn-dark">Войти</button>
         {error.message && <div style={{ color: 'red' }}>{error.message}</div>}
+
+        <p>Не зарегистрированы?</p>
+        <a href="/signup" type="button" className="btn btn-dark">Регистрация</a>
       </form>
     </div>
   );

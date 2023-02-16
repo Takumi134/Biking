@@ -22,6 +22,7 @@ function App({ user }) {
         <Route path="/list" element={<OneCardList />} />
         <Route path="/details" element={<DetailCard />} />
 
+
       </Routes>
     </div>
   );

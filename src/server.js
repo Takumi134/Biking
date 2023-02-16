@@ -4,7 +4,6 @@ import session from 'express-session';
 import store from 'session-file-store';
 import path from 'path';
 import jsxRender from './utils/jsxRender';
-import indexRouter from './routes/indexRouter';
 import apiUserRouter from './routes/apiUserRouter';
 import renderRouter from './routes/renderRouter';
 
@@ -30,16 +29,17 @@ const sessionConfig = {
   },
 };
 app.use(session(sessionConfig));
-
 app.use((req, res, next) => {
   res.locals.path = req.originalUrl;
   res.locals.user = req.session.user;
   next();
 });
-app.use('/', indexRouter);
+// app.use('/', indexRouter);
 app.use('/api/user/', apiUserRouter);
 app.use('/', renderRouter);
-// app.use('/', entriesRouter);
+
+
+
 app.listen(PORT, () => {
   console.log(`server started PORT: ${PORT}`);
 });

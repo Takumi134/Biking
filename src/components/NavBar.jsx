@@ -33,7 +33,6 @@ export default function NavBar({ user }) {
             {!user?.id && <a className="nav-link" href="/signup">Зарегистрироваться</a>}
             {user?.id && <a className="nav-link" href="/addway">Добавить маршрут</a>}
             {user?.id && <a className="nav-link" href="/account">Личный кабинет</a>}
-
             <div className="collapse navbar-collapse" id="navbarNavDarkDropdown" />
           </div>
         </div>

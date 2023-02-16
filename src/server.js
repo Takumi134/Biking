@@ -5,8 +5,6 @@ import store from 'session-file-store';
 import path from 'path';
 import jsxRender from './utils/jsxRender';
 import indexRouter from './routes/indexRouter';
-import apiUserRouter from './routes/apiUserRouter';
-import renderRouter from './routes/renderRouter';
 
 const app = express();
 app.engine('jsx', jsxRender);

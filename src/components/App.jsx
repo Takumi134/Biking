@@ -8,7 +8,7 @@ import OneCardList from './OneCardList';
 import MainPage from './MainPage';
 import DetailCard from './DetailCard';
 
-function App() {
+function App({}) {
   return (
     <div className="container">
       <NavBar />

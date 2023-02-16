@@ -25,7 +25,7 @@ export default function ListForm({  }) {
   };
   return (
     <div style={{
-      display: 'flex', justifyContent: 'center', alignItems: 'center', height: '50vh',
+      display: 'flex', justifyContent: 'center', alignItems: 'center', height: '80vh',
     }}
     >
       <form onSubmit={changeHandler}>

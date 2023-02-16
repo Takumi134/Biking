@@ -35,7 +35,7 @@ app.use((req, res, next) => {
   res.locals.user = req.session.user;
   next();
 });
-app.use('/', indexRouter);
+// app.use('/', indexRouter);
 app.use('/api/user/', apiUserRouter);
 app.use('/', renderRouter);
 // app.use('/', entriesRouter);

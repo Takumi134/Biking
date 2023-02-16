@@ -5,8 +5,6 @@ import store from 'session-file-store';
 import path from 'path';
 import jsxRender from './utils/jsxRender';
 import indexRouter from './routes/indexRouter';
-import apiUserRouter from './routes/apiUserRouter';
-import renderRouter from './routes/renderRouter';
 
 const app = express();
 app.engine('jsx', jsxRender);
@@ -36,8 +34,6 @@ app.use((req, res, next) => {
   next();
 });
 app.use('/', indexRouter);
-app.use('/api/user/', apiUserRouter);
-app.use('/', renderRouter);
 // app.use('/', entriesRouter);
 app.listen(PORT, () => {
   console.log(`server started PORT: ${PORT}`);

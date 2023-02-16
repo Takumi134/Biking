@@ -12,16 +12,17 @@ export default function SignUpPage() {
     // if (!(pass && formData.passRepeat && name)) {
     //   return setError({ message: 'Заполнены не все поля' });
     // }
+
     if (formData.pass !== formData.passRepeat) {
       return setError({ message: 'Пароли не совпадают' });
     }
     axios.post('/api/user/signup', formData)
       .then((res) => {
-        window.location = '/';
+        // window.location = '/';
       })
       .catch((err) => {
         console.log(err.response.data);
-        setError({ message: `Такая почта уже существует` });
+        setError({ message: 'Такая почта уже существует' });
       });
   };
 

@@ -17,7 +17,7 @@ export default function SignUpPage() {
     }
     axios.post('/api/user/signup', formData)
       .then((res) => {
-        window.location = '/';
+        // window.location = '/';
       })
       .catch((err) => {
         console.log(err.response.data);

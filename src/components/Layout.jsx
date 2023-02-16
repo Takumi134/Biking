@@ -28,7 +28,6 @@ export default function Layout({ initState }) {
             <App {...initState} />
           </StaticRouter>
         </div>
-        <div id="map" style={{ width: '600px', height: '400px' }} />
 
       </body>
     </html>

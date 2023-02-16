@@ -7,13 +7,14 @@ import ListForm from './ListForm';
 import OneCardList from './OneCardList';
 import MainPage from './MainPage';
 import DetailCard from './DetailCard';
+import Karta from './Karta';
 
-
-function App({user}) {
+function App({ user }) {
   return (
     <div className="container">
       <NavBar user={user} />
       <Routes>
+        <Route path="/" element={<Karta />} />
         <Route path="/" element={<MainPage />} />
         <Route path="/login" element={<LoginPage />} />
         <Route path="/signup" element={<SignUpPage />} />

@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 
-export default function ListForm({  }) {
+export default function ListForm({ }) {
   const [input, setInput] = useState({
-    title: '', img: '', desc: '', price: '',
+    length_way: '', img: '', location: '', name_way: '',
   });
 
   const handlerInput = (e) => {
@@ -20,32 +20,19 @@ export default function ListForm({  }) {
     window.location.href = '/';
     setAllItems((prev) => [input, ...prev]);
     setInput({
-      title: '', img: '', desc: '', price: '',
+      length_way: '', img: '', location: '', name_way: '',
     });
   };
   return (
     <div style={{
-      display: 'flex', justifyContent: 'center', alignItems: 'center', height: '80vh',
+      display: 'flex', justifyContent: 'left', alignItems: 'center', height: '80vh',
     }}
     >
       <form onSubmit={changeHandler}>
-        <div className="mb-3">
-          <label htmlFor="title" className="form-label">
-            Длина маршрута
-            <input
-              name="title"
-              type="text"
-              className="form-control"
-              id="exampleFormControlInput1"
-              placeholder="..."
-              onChange={handlerInput}
-              value={input.title}
-            />
-          </label>
-        </div>
+        <h3>Создание нового маршрута</h3>
         <div className="mb-3">
           <label htmlFor="img" className="form-label">
-            Населённый пункт
+            Изображение
             <input
               name="img"
               type="text"
@@ -58,33 +45,48 @@ export default function ListForm({  }) {
           </label>
         </div>
         <div className="mb-3">
-          <label htmlFor="desc" className="form-label">
+          <label htmlFor="name" className="form-label">
             Название маршрута
             <input
-              name="desc"
+              name="name"
               type="text"
               className="form-control"
               id="exampleFormControlInput1"
               placeholder="..."
               onChange={handlerInput}
-              value={input.desc}
+              value={input.name_way}
             />
           </label>
         </div>
         <div className="mb-3">
-          <label htmlFor="price" className="form-label">
-            Автор маршрута
+          <label htmlFor="length_way" className="form-label">
+            Длина маршрута
             <input
-              name="price"
-              type="number"
+              name="length_way"
+              type="text"
               className="form-control"
               id="exampleFormControlInput1"
               placeholder="..."
               onChange={handlerInput}
-              value={input.price}
+              value={input.length_way}
             />
           </label>
         </div>
+        <div className="mb-3">
+          <label htmlFor="location" className="form-label">
+            Населённый пункт
+            <input
+              name="location"
+              type="text"
+              className="form-control"
+              id="exampleFormControlInput1"
+              placeholder="..."
+              onChange={handlerInput}
+              value={input.location}
+            />
+          </label>
+        </div>
+
         <button type="submit" className="btn btn-dark">Добавить маршрут</button>
       </form>
     </div>

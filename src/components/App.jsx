@@ -7,6 +7,7 @@ import ListForm from './ListForm';
 import OneCardList from './OneCardList';
 import MainPage from './MainPage';
 import DetailCard from './DetailCard';
+import AccountPage from './AccountPage';
 
 
 function App({user}) {
@@ -20,6 +21,7 @@ function App({user}) {
         <Route path="/addlist" element={<ListForm />} />
         <Route path="/list" element={<OneCardList />} />
         <Route path="/details" element={<DetailCard />} />
+        <Route path="/account" element={<AccountPage />} />
 
       </Routes>
     </div>

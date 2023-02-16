@@ -8,10 +8,11 @@ import OneCardList from './OneCardList';
 import MainPage from './MainPage';
 import DetailCard from './DetailCard';
 
-function App({}) {
+
+function App({user}) {
   return (
     <div className="container">
-      <NavBar />
+      <NavBar user={user} />
       <Routes>
         <Route path="/" element={<MainPage />} />
         <Route path="/login" element={<LoginPage />} />

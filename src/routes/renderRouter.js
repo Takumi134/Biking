@@ -22,5 +22,8 @@ router.get('/list', (req, res) => {
 router.get('/details', (req, res) => {
   res.render('Layout');
 });
+router.get('/account', (req, res) => {
+  res.render('Layout');
+});
 
 export default router;

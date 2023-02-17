@@ -6,6 +6,7 @@ import path from 'path';
 import jsxRender from './utils/jsxRender';
 import apiUserRouter from './routes/apiUserRouter';
 import renderRouter from './routes/renderRouter';
+import routeRouter from './routes/routeRouter';
 
 const app = express();
 app.engine('jsx', jsxRender);
@@ -37,8 +38,7 @@ app.use((req, res, next) => {
 // app.use('/', indexRouter);
 app.use('/api/user/', apiUserRouter);
 app.use('/', renderRouter);
-
-
+app.use('/addlist', routeRouter);
 
 app.listen(PORT, () => {
   console.log(`server started PORT: ${PORT}`);

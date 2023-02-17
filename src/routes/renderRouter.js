@@ -1,9 +1,12 @@
 import express from 'express';
+import { Map, User } from '../../db/models';
 
 const router = express.Router();
 
-router.get('/', (req, res) => {
-  res.render('Layout');
+router.get('/', async (req, res) => {
+  const allRoutes = await Map.findAll({ include: User });
+  const initState = { allRoutes };
+  res.render('Layout', initState);
 });
 
 router.get('/login', (req, res) => {
@@ -13,7 +16,7 @@ router.get('/login', (req, res) => {
 router.get('/signup', (req, res) => {
   res.render('Layout');
 });
-router.get('/addlist', (req, res) => {
+router.get('/addlist', async (req, res) => {
   res.render('Layout');
 });
 router.get('/list', (req, res) => {

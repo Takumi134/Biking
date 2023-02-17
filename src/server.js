@@ -39,6 +39,7 @@ app.use((req, res, next) => {
 app.use('/api/user/', apiUserRouter);
 app.use('/', renderRouter);
 app.use('/addlist', routeRouter);
+// app.use('/account', routeRouter);
 
 app.listen(PORT, () => {
   console.log(`server started PORT: ${PORT}`);

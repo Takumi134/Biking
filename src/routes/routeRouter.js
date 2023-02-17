@@ -19,4 +19,24 @@ router.post('/', async (req, res) => {
   }
 });
 
+// const checkPriv = async (req, res, next) => {
+//   const { id } = req.params;
+//   try {
+//     const foundRoute = await Map.findAll({ where: { id } });
+//     if (foundRoute?.user_id === req?.session?.user?.id) {
+//       return next();
+//     }
+//   } catch (e) {
+//     console.log(e);
+//     return res.sendStatus(500);
+//   }
+//   return res.sendStatus(401);
+// };
+// router.get('/', checkPriv, async (req, res) => {
+//   await Map.findAll({
+//     where: { user_id: req.session.user.id },
+//     include: User,
+//   });
+//   res.sendStatus(200);
+// });
 export default router;

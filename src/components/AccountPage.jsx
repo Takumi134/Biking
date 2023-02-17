@@ -1,8 +1,7 @@
-import React, { useState } from 'react';
-import ListForm from './ListForm';
+import React from 'react';
 import OneCardList from './OneCardList';
 
-export default function MainPage({
+export default function AccountPage({
   allRoutes, user, setRoutes, routes,
 }) {
   return (

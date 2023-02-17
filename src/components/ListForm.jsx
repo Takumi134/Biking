@@ -94,6 +94,18 @@ export default function ListForm({ setRoutes }) {
             />
           </label>
         </div>
+        <div className="mb-3">
+          <label htmlFor="name" className="form-label">
+            координаты
+            <input
+              name="coord"
+              type="text"
+              className="form-control"
+              id="exampleFormControlInput1"
+              placeholder="..."
+            />
+          </label>
+        </div>
 
         <button type="submit" className="btn btn-dark">Добавить маршрут</button>
       </form>

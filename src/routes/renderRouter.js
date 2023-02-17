@@ -22,11 +22,16 @@ router.get('/addlist', async (req, res) => {
 router.get('/list', (req, res) => {
   res.render('Layout');
 });
-router.get('/details', (req, res) => {
-  res.render('Layout');
+router.get('/details/:id', async (req, res) => {
+  const { id } = req.params;
+  const route = await Map.findByPk(id);
+  const initState = { route };
+  res.render('Layout', initState);
 });
-router.get('/account', (req, res) => {
-  res.render('Layout');
+router.get('/account', async (req, res) => {
+  const allRoutes = await Map.findAll({ include: User });
+  const initState = { allRoutes };
+  res.render('Layout', initState);
 });
 
 export default router;
